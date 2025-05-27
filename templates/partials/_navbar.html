@@ -24,9 +24,8 @@
 {%comment %} fix link {% endcomment %} 
               <a class="nav-link" href={% url "pages:about" %}>About</a>
             </li>
-            <li class="nav-item mr-3">
-{%comment %} fix link {% endcomment %}                 
-              <a class="nav-link" href="listings.html">Featured Listings</a>
+            <li class="nav-item mr-3">             
+              <a class="nav-link" href={% url "listings:listings" %}>Featured Listings</a>
             </li>
           </ul>
 
