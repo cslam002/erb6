@@ -17,11 +17,11 @@
           <ul class="navbar-nav">
             <li {% if request.path == '/' %} class="nav-item active mr-3" {% else %} class="nav-item mr-3" {% endif %}>
       
-{%comment %} fix link {% endcomment %}                 
+{% comment %} fix link {% endcomment %}                 
               <a class="nav-link" href={% url "pages:index" %}>Home</a>
             </li>
             <li {% if 'about' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item mr-3" {% endif %}>
-{%comment %} fix link {% endcomment %} 
+{% comment %} fix link {% endcomment %} 
               <a class="nav-link" href={% url "pages:about" %}>About</a>
             </li>
             <li class="nav-item mr-3">             
@@ -31,14 +31,14 @@
 
           <ul class="navbar-nav ml-auto">
             <li class="nav-item mr-3">
-{%comment %} fix link {% endcomment %}    
+{% comment %} fix link {% endcomment %}    
 
               <a class="nav-link" href="register.html">
                 <i class="fas fa-user-plus"></i> Register</a
               >
             </li>
             <li class="nav-item mr-3">
-{%comment %} fix link {% endcomment %}                
+{% comment %} fix link {% endcomment %}                
               <a class="nav-link" href="login.html">
                 <i class="fas fa-sign-in-alt"></i>
 
@@ -49,3 +49,4 @@
         </div>
       </div>
     </nav>
+

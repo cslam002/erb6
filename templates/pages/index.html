@@ -1,4 +1,5 @@
 {% extends "base.html" %} {% block content %}
+
     <!-- Showcase -->
     <section id="showcase">
       <div class="container text-center">
@@ -11,8 +12,7 @@
               tempore! Consectetur, id commodi!
             </p>
             <div class="search">
-{% comment %}  {% endcomment %}
-              <form action="search.html">
+              <form action="search.html" {% comment %}  {% endcomment %} >
                 <!-- Form Row 1 -->
                 <div class="form-row">
                   <div class="col-md-4 mb-3">
@@ -35,7 +35,7 @@
                     />
                   </div>
 
-             {% comment %}  {% endcomment %}     <div class="col-md-4 mb-3">
+                  <div class="col-md-4 mb-3">
                     <label class="sr-only">District</label>
                     <select name="district" class="form-control">
                       <option selected="true" disabled="disabled">
@@ -109,6 +109,7 @@
         </div>
       </div>
     </section>
+
     <!-- Listings -->
     <section id="listings" class="py-5">
       <div class="container">
@@ -119,8 +120,7 @@
             <div class="card listing-preview">
               <img
                 class="card-img-top"
-{% comment %}  {% endcomment %}
-                src="assets/img/homes/home-1.jpg"
+                src="assets/img/homes/home-1.jpg" {% comment %}  {% endcomment %} 
                 alt=""
               />
               <div class="card-img-overlay">
@@ -136,7 +136,7 @@
                   <p>
                     <i class="fas fa-map-marker text-secondary"></i> Yau Tsim
                     Mong
-                  </p>{% comment %}  {% endcomment %}
+                  </p>
                 </div>
                 <hr />
                 <div class="row py-2 text-secondary">
@@ -144,7 +144,7 @@
                     <i class="fas fa-th-large"></i> Sqft: 2500
                   </div>
                   <div class="col-6">
-                    <i {% comment %}  {% endcomment %}class="fas fa-dumbbell"></i> ClubHouse: 2
+                    <i class="fas fa-dumbbell"></i> ClubHouse: 2
                   </div>
                 </div>
                 <div class="row py-2 text-secondary">
@@ -165,7 +165,7 @@
                   </div>
                 </div>
                 <hr />
-                <a href="listing.html" class="btn btn-primary btn-block"
+                <a href="listing.html" {% comment %}  {% endcomment %}  class="btn btn-primary btn-block"
                   >More Info</a
                 >
               </div>
@@ -177,8 +177,7 @@
             <div class="card listing-preview">
               <img
                 class="card-img-top"
-{% comment %}  {% endcomment %}                
-                src="assets/img/homes/home-2.jpg"
+                src="assets/img/homes/home-2.jpg" {% comment %}  {% endcomment %} 
                 alt=""
               />
               <div class="card-img-overlay">
@@ -202,11 +201,14 @@
                     <i class="fas fa-th-large"></i> Sqft: 3200
                   </div>
                   <div class="col-6">
-                    <i class="fas f
+                    <i class="fas fa-dumbbell"></i> ClubHouse: 1
+                  </div>
                 </div>
                 <div class="row py-2 text-secondary">
                   <div class="col-6">
-                    <i class="fas f">
+                    <i class="fas fa-bed"></i> Bedrooms: 4
+                  </div>
+                  <div class="col-6">
                     <i class="fas fa-bath"></i> Bathrooms: 2.5
                   </div>
                 </div>
@@ -222,8 +224,7 @@
                   </div>
                 </div>
                 <hr />
-{% comment %}  {% endcomment %}{% comment %}  {% endcomment %}                
-                <a href="listing.html" class="btn btn-primary btn-block"
+                <a href="listing.html" {% comment %}  {% endcomment %}  class="btn btn-primary btn-block"
                   >More Info</a
                 >
               </div>
@@ -235,8 +236,7 @@
             <div class="card listing-preview">
               <img
                 class="card-img-top"
-{% comment %}  {% endcomment %}                
-                src="assets/img/homes/home-3.jpg"
+                src="assets/img/homes/home-3.jpg" {% comment %}  {% endcomment %} 
                 alt=""
               />
               <div class="card-img-overlay">
@@ -268,7 +268,7 @@
                     <i class="fas fa-bed"></i> Bedrooms: 4
                   </div>
                   <div class="col-6">
-                   <i class="fas fa-bath"></i> Bathrooms: 3
+                    <i class="fas fa-bath"></i> Bathrooms: 3
                   </div>
                 </div>
                 <hr />
@@ -281,9 +281,8 @@
                   </div>
                 </div>
                 <hr />
-{% comment %}  {% endcomment %}                
-                <a href="listing.html" class="btn btn-primary btn-block"
-                 {% comment %}  {% endcomment %} >More Info</a
+                <a href="listing.html" {% comment %}  {% endcomment %} class="btn btn-primary btn-block"
+                  >More Info</a
                 >
               </div>
             </div>
@@ -291,12 +290,12 @@
         </div>
       </div>
     </section>
-    <!-- Servicing -->
+
     <section id="services" class="py-5 bg-secondary text-white">
       <div class="container">
         <div class="row text-center">
           <div class="col-md-4">
-            {% comment %}  {% endcomment %}<i class="fas fa-comment fa-4x mr-4"></i>
+            <i class="fas fa-comment fa-4x mr-4"></i>
             <hr />
             <h3>Consulting Services</h3>
             <p>
