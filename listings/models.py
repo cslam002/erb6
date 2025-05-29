@@ -19,7 +19,7 @@ class Listing(models.Model):
     sqrt = models.IntegerField()
     estate_size = models.FloatField(default=0.0)
     is_published = models.BooleanField(default=True)
-    list_date = models.DateField(auto_now_add=True)
+    list_date = models.DateTimeField(auto_now_add=True)
     photo_main = models.ImageField(upload_to='photos/%Y/%m/%d/')
     photo_1 = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
     photo_2 = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
@@ -29,10 +29,10 @@ class Listing(models.Model):
     photo_6 = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
 
 
-class Meta:
-    ordering = ('-list_date',)
-    indexes = [models.Index(fields=['list_date'])]
+    class Meta:
+        ordering = ('-list_date',)
+        indexes = [models.Index(fields=['list_date'])]
 
-def __str__(self):
-    return self.title
+    def __str__(self):
+        return self.title
 
