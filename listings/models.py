@@ -18,7 +18,7 @@ class Listing(models.Model):
     clubhouse = models.IntegerField()
     sqrt = models.IntegerField()
     estate_size = models.FloatField(default=0.0)
-    is_published = models.BooleanField(default=0.0)
+    is_published = models.BooleanField(default=True)
     list_date = models.DateField(auto_now_add=True)
     photo_main = models.ImageField(upload_to='photos/%Y/%m/%d/')
     photo_1 = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
