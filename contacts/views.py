@@ -1,7 +1,8 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Contact
 from django.contrib import messages
 from django.core.mail import send_mail
+from contacts.forms import ContactForm
 
 # Create your views here.
 
@@ -34,4 +35,17 @@ def contact(request):
         return redirect("listings:listing", listing_id=listing_id)
 
 def delete_contact(request, contact_id):
+    contact = get_object_or_404(Contact, pk=contact_id)
+    contact.delete()
     return redirect("accounts:dashboard")
+
+def edit_contact(request, contact_id):
+    contact = get_object_or_404(Contact, pk=contact_id)
+    if (request.method) == "POST":
+        form = ContactForm(request.POST, instance=contact)
+        if form.is_valid():
+            form.save()
+            return redirect('accounts:dashboard')
+    else:
+        form = ContactForm(instance=contact)
+    return render(request, 'contacts/edit_message.html', {'form': form})

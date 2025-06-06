@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages, auth
 from django.contrib.auth.models import User
+from contacts.models import Contact
 
 # Create your views here.
 def register(request):
@@ -37,7 +38,7 @@ def login(request):
         user = auth.authenticate(request, username=username, password=password)
         if user is not None:
             auth.login(request, user)
-            messages.success(request, "You are not logged in !")
+            messages.success(request, "You are logged in !")
             return redirect("accounts:dashboard")
         else:
             messages.error(request, "Invalid credentials !")
@@ -52,4 +53,6 @@ def logout(request):
     return redirect("pages:index")
 
 def dashboard(request):
-    return render(request, 'accounts/dashboard.html')
+    user_contacts = Contact.objects.order_by('-contact_date').filter(user_id=request.user.id)
+    context = {"contacts" : user_contacts}
+    return render(request, 'accounts/dashboard.html', context)
